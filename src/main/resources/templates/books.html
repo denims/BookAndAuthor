@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Deni Test</title>
 </head>
 <body>
-$END$
+
+    <h1>List of books</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="book : ${books}">
+                <td th:text="${book.id}">123</td>
+                <td th:text="${book.title}">Spring in action</td>
+                <td th:text="${book.publisher.name}">Deni</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
 </body>
 </html>
